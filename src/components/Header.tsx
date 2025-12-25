@@ -21,9 +21,7 @@ const Header: React.FC = () => {
       {/* Stats bar */}
       <div className="flex gap-6 mb-3 font-mono text-xs">
         <span><span className="text-green-500">6+</span> <span className="text-neutral-500">Years Crypto</span></span>
-        <span><span className="text-green-500">5+</span> <span className="text-neutral-500">Products</span></span>
-        <span><span className="text-green-500">$50k+</span> <span className="text-neutral-500">Revenue</span></span>
-        <span><span className="text-green-500">8+</span> <span className="text-neutral-500">Years Remote</span></span>
+        <span><span className="text-green-500">5+</span> <span className="text-neutral-500">Products Shipped</span></span>
       </div>
       
       <div className="font-mono text-xs text-neutral-500 flex flex-wrap gap-4">
