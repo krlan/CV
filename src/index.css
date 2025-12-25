@@ -1,17 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --bg: #0a0a0a;
-  --surface: #111111;
-  --border: #262626;
-  --text: #fafafa;
-  --text-muted: #a1a1aa;
-  --accent: #22d3ee;
-  --accent-2: #a855f7;
+  --bg: #0c0c0c;
+  --surface: #141414;
+  --border: #1f1f1f;
+  --text: #e5e5e5;
+  --text-muted: #737373;
+  --accent: #22c55e;
+  --accent-dim: #166534;
 }
 
 body {
@@ -20,47 +20,34 @@ body {
   color: var(--text);
 }
 
-/* Define print styles to optimize for PDF output */
 @media print {
   body {
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
     background: white;
-    color: #0a0a0a;
+    color: #171717;
   }
-  .no-print {
-    display: none;
-  }
-  section {
-    page-break-inside: avoid;
-  }
+  .no-print { display: none; }
 }
 
 @layer components {
   .section-title {
-    @apply text-sm font-semibold pb-1 mb-3 mt-5 uppercase tracking-wider flex items-center gap-2;
+    @apply text-xs font-semibold mb-3 mt-5 uppercase tracking-wider;
     font-family: 'JetBrains Mono', monospace;
-    color: var(--accent);
-  }
-  .section-title::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: var(--border);
+    color: var(--text-muted);
   }
   
   .experience-entry {
-    @apply mb-4 pl-3;
-    border-left: 2px solid var(--border);
-    transition: border-color 0.2s;
+    @apply mb-4 pb-4;
+    border-bottom: 1px solid var(--border);
   }
-  .experience-entry:hover {
-    border-color: var(--accent);
+  .experience-entry:last-child {
+    border-bottom: none;
   }
   
   .experience-entry h3 {
     @apply text-sm font-semibold;
-    color: var(--text);
+    color: #fff;
   }
   
   .experience-entry .details {
@@ -79,15 +66,15 @@ body {
     @apply pl-4 relative;
   }
   .experience-entry li::before {
-    content: '→';
+    content: '›';
     position: absolute;
     left: 0;
-    color: var(--border);
+    color: var(--accent-dim);
+    font-weight: bold;
   }
   
   .skills-category {
     @apply py-1;
-    border-bottom: 1px solid var(--border);
   }
   
   .skills-category h4 {
@@ -107,6 +94,6 @@ body {
   }
   
   a:hover {
-    opacity: 0.8;
+    text-decoration: underline;
   }
 }

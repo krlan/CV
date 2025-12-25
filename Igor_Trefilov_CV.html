@@ -4,18 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Igor Trefilov | CV</title>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #0a0a0a;
-      --surface: #111111;
-      --surface-2: #1a1a1a;
-      --border: #262626;
-      --text: #fafafa;
-      --text-muted: #a1a1aa;
-      --accent: #22d3ee;
-      --accent-2: #a855f7;
-      --gradient: linear-gradient(135deg, #22d3ee 0%, #a855f7 100%);
+      --bg: #0c0c0c;
+      --surface: #141414;
+      --border: #1f1f1f;
+      --text: #e5e5e5;
+      --text-muted: #737373;
+      --accent: #22c55e;
+      --accent-dim: #166534;
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
@@ -23,136 +21,111 @@
       background: var(--bg);
       color: var(--text);
       font-size: 10pt;
-      line-height: 1.5;
-      padding: 32px;
+      line-height: 1.6;
+      padding: 40px;
       max-width: 800px;
       margin: 0 auto;
     }
-    a { color: var(--accent); text-decoration: none; transition: opacity 0.2s; }
-    a:hover { opacity: 0.8; }
-    code, .mono { font-family: 'JetBrains Mono', monospace; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .mono { font-family: 'JetBrains Mono', monospace; }
     
     /* Header */
-    header { margin-bottom: 20px; }
-    .name-row { display: flex; align-items: baseline; gap: 12px; margin-bottom: 8px; }
-    h1 { 
-      font-size: 28pt; 
-      font-weight: 700; 
-      background: var(--gradient);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
+    header { margin-bottom: 24px; border-bottom: 1px solid var(--border); padding-bottom: 20px; }
+    .name-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
+    h1 { font-size: 24pt; font-weight: 700; color: #fff; letter-spacing: -0.5px; }
     .status {
       font-family: 'JetBrains Mono', monospace;
       font-size: 8pt;
-      color: #22c55e;
+      color: var(--accent);
       display: flex;
       align-items: center;
-      gap: 4px;
+      gap: 6px;
+      background: var(--surface);
+      padding: 4px 10px;
+      border-radius: 4px;
+      border: 1px solid var(--accent-dim);
     }
     .status::before {
       content: '';
       width: 6px;
       height: 6px;
-      background: #22c55e;
+      background: var(--accent);
       border-radius: 50%;
       animation: pulse 2s infinite;
     }
     @keyframes pulse {
       0%, 100% { opacity: 1; }
-      50% { opacity: 0.5; }
+      50% { opacity: 0.4; }
     }
     .contact { 
       font-family: 'JetBrains Mono', monospace;
       font-size: 8pt; 
       color: var(--text-muted); 
       display: flex; 
-      flex-wrap: wrap; 
-      gap: 16px; 
+      gap: 20px; 
     }
     .contact a { color: var(--text-muted); }
     .contact a:hover { color: var(--accent); }
     
-    /* Highlights */
-    .highlights {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 8px;
+    /* Stats bar */
+    .stats {
+      display: flex;
+      gap: 24px;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
       margin-bottom: 20px;
     }
-    .highlight-item {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      padding: 10px 12px;
-      font-size: 8.5pt;
-      color: var(--text);
-      position: relative;
-      overflow: hidden;
+    .stat {
+      display: flex;
+      flex-direction: column;
     }
-    .highlight-item::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 3px;
-      height: 100%;
-      background: var(--gradient);
-    }
-    .highlight-item .label {
+    .stat-value {
       font-family: 'JetBrains Mono', monospace;
+      font-size: 14pt;
+      font-weight: 700;
+      color: #fff;
+    }
+    .stat-label {
       font-size: 7pt;
-      color: var(--accent);
+      color: var(--text-muted);
       text-transform: uppercase;
       letter-spacing: 0.5px;
-      margin-bottom: 2px;
     }
     
     /* Sections */
     .section-title {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 9pt;
+      font-size: 8pt;
       font-weight: 600;
-      color: var(--accent);
+      color: var(--text-muted);
       text-transform: uppercase;
-      letter-spacing: 1.5px;
-      margin: 16px 0 10px 0;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .section-title::after {
-      content: '';
-      flex: 1;
-      height: 1px;
-      background: var(--border);
+      letter-spacing: 1px;
+      margin: 20px 0 12px 0;
     }
     
     /* Summary */
     .summary { 
-      font-size: 9pt; 
+      font-size: 9.5pt; 
       color: var(--text-muted); 
-      line-height: 1.6; 
-      padding-left: 12px;
-      border-left: 2px solid var(--border);
+      line-height: 1.7;
     }
+    .summary strong { color: var(--text); font-weight: 500; }
     
     /* Experience */
     .experience-entry { 
-      margin-bottom: 14px;
-      padding-left: 12px;
-      border-left: 2px solid var(--border);
-      transition: border-color 0.2s;
+      margin-bottom: 16px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border);
     }
-    .experience-entry:hover { border-color: var(--accent); }
-    .experience-entry h3 { font-size: 10pt; font-weight: 600; margin-bottom: 2px; color: var(--text); }
+    .experience-entry:last-child { border-bottom: none; }
+    .exp-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px; }
+    .experience-entry h3 { font-size: 10pt; font-weight: 600; color: #fff; }
     .experience-entry h3 a { color: var(--accent); }
     .experience-entry .period { 
       font-family: 'JetBrains Mono', monospace;
-      font-size: 7.5pt; 
-      color: var(--text-muted); 
-      margin-bottom: 4px; 
+      font-size: 7pt; 
+      color: var(--text-muted);
     }
     .experience-entry ul { 
       list-style: none; 
@@ -160,69 +133,57 @@
       color: var(--text-muted);
     }
     .experience-entry li { 
-      margin-bottom: 2px;
-      padding-left: 12px;
+      margin-bottom: 3px;
+      padding-left: 14px;
       position: relative;
     }
     .experience-entry li::before {
-      content: '→';
+      content: '›';
       position: absolute;
       left: 0;
-      color: var(--border);
+      color: var(--accent-dim);
+      font-weight: bold;
     }
     .experience-entry li strong { color: var(--text); font-weight: 500; }
+    .tech-stack {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 7pt;
+      color: var(--text-muted);
+      margin-top: 6px;
+      padding: 6px 8px;
+      background: var(--surface);
+      border-radius: 3px;
+      border-left: 2px solid var(--accent-dim);
+    }
     
     /* Skills */
     .skills-grid { 
       display: grid; 
       grid-template-columns: 1fr 1fr; 
-      gap: 6px 20px;
-    }
-    .skill-category { 
-      padding: 6px 0;
-      border-bottom: 1px solid var(--border);
+      gap: 8px 32px;
     }
     .skill-category h4 { 
       font-family: 'JetBrains Mono', monospace;
-      font-size: 7.5pt; 
+      font-size: 7pt; 
       font-weight: 600; 
       color: var(--accent); 
       text-transform: uppercase;
-      letter-spacing: 0.5px;
+      letter-spacing: 0.3px;
       margin-bottom: 2px;
     }
-    .skill-category p { font-size: 8pt; color: var(--text-muted); }
+    .skill-category p { font-size: 8pt; color: var(--text-muted); line-height: 1.5; }
     
     /* Education */
-    .education { 
-      padding-left: 12px;
-      border-left: 2px solid var(--border);
-    }
-    .education h3 { font-size: 10pt; font-weight: 600; color: var(--text); }
+    .education h3 { font-size: 10pt; font-weight: 600; color: #fff; }
     .education p { font-size: 8pt; color: var(--text-muted); }
     
-    /* Print styles */
+    /* Print */
     @media print {
-      body { 
-        background: white; 
-        color: #0a0a0a;
-        padding: 16px;
-      }
-      :root {
-        --bg: white;
-        --surface: #f5f5f5;
-        --border: #e5e5e5;
-        --text: #0a0a0a;
-        --text-muted: #525252;
-        --accent: #0891b2;
-      }
-      h1 { 
-        background: none;
-        -webkit-text-fill-color: #0a0a0a;
-        color: #0a0a0a;
-      }
-      .highlight-item::before { background: #0891b2; }
-      @page { margin: 0.4in; }
+      body { background: white; color: #171717; padding: 20px; }
+      :root { --bg: white; --surface: #f5f5f5; --border: #e5e5e5; --text: #171717; --text-muted: #525252; --accent: #16a34a; }
+      h1, .experience-entry h3, .stat-value, .education h3 { color: #171717; }
+      .status { background: #f0fdf4; border-color: #bbf7d0; }
+      @page { margin: 0.5in; }
     }
   </style>
 </head>
@@ -230,92 +191,99 @@
   <header>
     <div class="name-row">
       <h1>Igor Trefilov</h1>
-      <span class="status">available for hire</span>
+      <span class="status">open to work</span>
     </div>
     <div class="contact">
       <span>remote</span>
-      <span>·</span>
       <a href="mailto:igor@sigma.club">igor@sigma.club</a>
-      <span>·</span>
       <a href="https://x.com/trefeelove">x.com/trefeelove</a>
-      <span>·</span>
       <a href="https://sigma.club">sigma.club</a>
     </div>
   </header>
 
-  <div class="highlights">
-    <div class="highlight-item">
-      <div class="label">ai automation</div>
-      Building AI agents: voice, email, translation & recruiting
+  <div class="stats">
+    <div class="stat">
+      <span class="stat-value">6+</span>
+      <span class="stat-label">Years in Crypto/DeFi</span>
     </div>
-    <div class="highlight-item">
-      <div class="label">revenue</div>
-      Generated $50k+ in first week launching NFT collection
+    <div class="stat">
+      <span class="stat-value">5+</span>
+      <span class="stat-label">Products Shipped</span>
     </div>
-    <div class="highlight-item">
-      <div class="label">shipped</div>
-      5+ products from concept to production
+    <div class="stat">
+      <span class="stat-value">$50k+</span>
+      <span class="stat-label">Revenue Generated</span>
     </div>
-    <div class="highlight-item">
-      <div class="label">experience</div>
-      8+ years remote work across US, EU, APAC
+    <div class="stat">
+      <span class="stat-value">8+</span>
+      <span class="stat-label">Years Remote</span>
     </div>
   </div>
 
   <section>
     <h2 class="section-title">Summary</h2>
-    <p class="summary">AI & Blockchain entrepreneur who has built and shipped 5+ products, generating $50k+ revenue from zero. Self-taught engineer (TypeScript, React, Solidity, Python) with 6+ years in crypto/DeFi and deep expertise in AI automation — voice AI, intelligent email systems, and workflow orchestration. Combines technical execution speed with product vision, consistently delivering from concept to production in weeks, not months.</p>
+    <p class="summary"><strong>AI & Blockchain builder</strong> who ships. 5+ products from zero to production. Self-taught engineer (TypeScript, React, Solidity, Python) building AI automation systems — voice agents, email automation, RAG pipelines. 6+ years deep in crypto/DeFi. I move fast: concept to production in weeks, not months.</p>
   </section>
 
   <section>
     <h2 class="section-title">Experience</h2>
     
     <div class="experience-entry">
-      <h3>Founder & CEO · <a href="https://leverbrain.com">LeverBrain</a> — AI Automation Agency</h3>
-      <p class="period">2024 — present · remote</p>
+      <div class="exp-header">
+        <h3>Founder & CEO · <a href="https://leverbrain.com">LeverBrain</a></h3>
+        <span class="period">2024 — present</span>
+      </div>
+      <p style="font-size: 8pt; color: var(--text-muted); margin-bottom: 6px;">AI Automation Agency — building custom AI agents for businesses</p>
       <ul>
-        <li>Founded an AI automation agency building custom AI agents — specializing in voice AI, email automation, translation, and recruiting.</li>
-        <li><strong>Voice AI:</strong> Conversational agents for support, booking, lead qualification (Twilio, Vapi, ElevenLabs, LLM integrations).</li>
-        <li><strong>Email Automation:</strong> Intelligent responders and outreach sequences (GPT-4/Claude, HubSpot, Salesforce).</li>
-        <li><strong>AI Translation:</strong> Real-time multilingual pipelines (Whisper, LLM-based translation).</li>
-        <li><strong>Recruiting:</strong> Resume parsing, candidate scoring, auto-outreach, interview scheduling.</li>
-        <li>Tech stack: LangChain, Gemini/Claude/OpenAI API, Whisper, ElevenLabs, Vapi, n8n, Make.com, RAG pipelines.</li>
+        <li><strong>Voice AI:</strong> Conversational agents for support, booking, lead qualification</li>
+        <li><strong>Email Automation:</strong> Intelligent responders and outreach sequences with CRM integration</li>
+        <li><strong>AI Translation:</strong> Real-time multilingual pipelines for global communication</li>
+        <li><strong>Recruiting:</strong> Resume parsing, candidate scoring, automated outreach</li>
+      </ul>
+      <div class="tech-stack">LangChain · Gemini/Claude/OpenAI · Whisper · ElevenLabs · Vapi · n8n · Make.com · RAG</div>
+    </div>
+
+    <div class="experience-entry">
+      <div class="exp-header">
+        <h3>Founder & Product Lead · <a href="https://sigma.club/">Sigma Club</a></h3>
+        <span class="period">2023 — present</span>
+      </div>
+      <p style="font-size: 8pt; color: var(--text-muted); margin-bottom: 6px;">AI-powered collaborative learning platform</p>
+      <ul>
+        <li>Architected 3 AI features: personalized learning paths, interest-based matching, gap analysis</li>
+        <li>Full-stack: React, TypeScript, Supabase, Gemini/Claude API</li>
       </ul>
     </div>
 
     <div class="experience-entry">
-      <h3>Founder & Product Lead · <a href="https://sigma.club/">Sigma Club</a> — Learning Platform</h3>
-      <p class="period">2023 — present · remote</p>
+      <div class="exp-header">
+        <h3>Blockchain Specialist & DeFi Strategist</h3>
+        <span class="period">2019 — present</span>
+      </div>
       <ul>
-        <li>Building AI-powered collaborative learning platform for personalized growth paths within communities.</li>
-        <li>Architected 3 AI features: personalized learning paths, interest-based matching, knowledge gap analysis.</li>
-        <li>Full-stack: React, TypeScript, Supabase, Gemini/Claude API. Leveraging AI-assisted development to move fast.</li>
+        <li><strong>6+ years</strong> in crypto: DeFi analysis, yield strategies, NFT launches, smart contracts</li>
+        <li>Generated <strong>$50k+ in one week</strong> — NFT collection launch on FTX marketplace day-one</li>
+        <li>Yield strategies: Pendle, EigenLayer, NFTX. Smart contracts: Solidity, OpenZeppelin, Metaplex</li>
       </ul>
     </div>
 
     <div class="experience-entry">
-      <h3>Blockchain Specialist & DeFi Strategist</h3>
-      <p class="period">2019 — present · remote</p>
+      <div class="exp-header">
+        <h3>Founder · E-commerce (Digital Products)</h3>
+        <span class="period">2017 — 2021</span>
+      </div>
       <ul>
-        <li><strong>6+ years</strong> in crypto: DeFi protocol analysis, yield strategies, NFT launches, smart contract development.</li>
-        <li>Generated <strong>$50k+ profit in one week</strong> launching NFT collection on FTX marketplace day-one.</li>
-        <li>Yield strategies: Pendle Finance, EigenLayer, NFTX. Smart contracts: Solidity, OpenZeppelin, Metaplex.</li>
+        <li>Built and operated profitable store selling digital products to Amazon sellers. <strong>4 years profitable.</strong></li>
       </ul>
     </div>
 
     <div class="experience-entry">
-      <h3>Founder · E-commerce Business — Digital Products</h3>
-      <p class="period">2017 — 2021 · remote</p>
+      <div class="exp-header">
+        <h3>Product Manager · FinTech Startup</h3>
+        <span class="period">2016 — 2017</span>
+      </div>
       <ul>
-        <li>Built and operated profitable e-commerce store selling digital products to Amazon sellers. <strong>4 years profitable.</strong></li>
-      </ul>
-    </div>
-
-    <div class="experience-entry">
-      <h3>Product Manager · FinTech Startup — Loan Comparison Platform</h3>
-      <p class="period">2016 — 2017 · remote (california-based)</p>
-      <ul>
-        <li>Product management for loan comparison platform. Coordinated remote team across timezones. <strong>8+ years distributed work.</strong></li>
+        <li>Loan comparison platform. Remote team coordination across timezones.</li>
       </ul>
     </div>
   </section>
@@ -323,20 +291,20 @@
   <section>
     <h2 class="section-title">Skills</h2>
     <div class="skills-grid">
-      <div class="skill-category"><h4>Expert</h4><p>AI Automation (Voice AI, LLMs, RAG), TypeScript, React, Product Strategy, DeFi/Blockchain, Remote Leadership</p></div>
-      <div class="skill-category"><h4>Proficient</h4><p>Python, Solidity, Node.js, Next.js, Supabase, n8n/Make.com, LangChain, OpenAI/Claude/Gemini APIs, Web3.js/Ethers.js</p></div>
-      <div class="skill-category"><h4>AI/ML Stack</h4><p>OpenAI, Claude, Gemini APIs, Whisper, ElevenLabs, OpenRouter, Custom RAG Pipelines, Agentic Engineering, Prompt Engineering</p></div>
-      <div class="skill-category"><h4>Blockchain</h4><p>DeFi (Pendle, EigenLayer, NFTX), Smart Contracts (OpenZeppelin), NFTs (ERC-721, Metaplex), Tokenomics</p></div>
+      <div class="skill-category"><h4>Expert</h4><p>AI Automation, Voice AI, LLMs, RAG, TypeScript, React, Product Strategy, DeFi/Blockchain, Remote Leadership</p></div>
+      <div class="skill-category"><h4>Proficient</h4><p>Python, Solidity, Node.js, Next.js, Supabase, n8n/Make.com, LangChain, Web3.js/Ethers.js</p></div>
+      <div class="skill-category"><h4>AI/ML</h4><p>OpenAI, Claude, Gemini, Whisper, ElevenLabs, OpenRouter, RAG Pipelines, Agentic Engineering</p></div>
+      <div class="skill-category"><h4>Blockchain</h4><p>DeFi Protocols, Smart Contracts (OpenZeppelin), NFTs (ERC-721, Metaplex), Tokenomics</p></div>
       <div class="skill-category"><h4>Languages</h4><p>English (Fluent), Russian (Native)</p></div>
-      <div class="skill-category"><h4>Soft Skills</h4><p>8+ Years Remote Work, Async Communication, 0→1 Product Building, Rapid Prototyping, Cross-timezone Collaboration</p></div>
+      <div class="skill-category"><h4>Work Style</h4><p>8+ Years Remote, Async Communication, 0→1 Building, Ship Fast</p></div>
     </div>
   </section>
 
   <section>
     <h2 class="section-title">Education</h2>
     <div class="education">
-      <h3>Bachelor of Science in Economics</h3>
-      <p>Higher School of Economics · Saint-Petersburg, Russia · 2016</p>
+      <h3>BSc Economics</h3>
+      <p>Higher School of Economics · Saint-Petersburg · 2016</p>
     </div>
   </section>
 </body>

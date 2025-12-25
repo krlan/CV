@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Mail, MapPin, Twitter, Globe } from 'lucide-react';
 
 const Header: React.FC = () => {
   return (
@@ -11,20 +10,30 @@ const Header: React.FC = () => {
       transition={{ duration: 0.5 }}
     >
       <div className="flex items-baseline gap-3 mb-2">
-        <h1 className="text-3xl font-bold bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">Igor Trefilov</h1>
+        <h1 className="text-3xl font-bold text-white">Igor Trefilov</h1>
         <span className="font-mono text-xs text-green-500 flex items-center gap-1.5">
           <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></span>
-          available for hire
+          open to work
         </span>
       </div>
-      <div className="font-mono text-xs text-zinc-500 flex flex-wrap gap-4">
+      <p className="text-neutral-400 text-sm mb-3">AI & Blockchain builder who ships</p>
+      
+      {/* Stats bar */}
+      <div className="flex gap-6 mb-3 font-mono text-xs">
+        <span><span className="text-green-500">6+</span> <span className="text-neutral-500">Years Crypto</span></span>
+        <span><span className="text-green-500">5+</span> <span className="text-neutral-500">Products</span></span>
+        <span><span className="text-green-500">$50k+</span> <span className="text-neutral-500">Revenue</span></span>
+        <span><span className="text-green-500">8+</span> <span className="text-neutral-500">Years Remote</span></span>
+      </div>
+      
+      <div className="font-mono text-xs text-neutral-500 flex flex-wrap gap-4">
         <span>remote</span>
-        <span className="text-zinc-700">·</span>
-        <a href="mailto:igor@sigma.club" className="hover:text-cyan-400 transition-colors">igor@sigma.club</a>
-        <span className="text-zinc-700">·</span>
-        <a href="https://x.com/trefeelove" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400 transition-colors">x.com/trefeelove</a>
-        <span className="text-zinc-700">·</span>
-        <a href="https://sigma.club" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400 transition-colors">sigma.club</a>
+        <span className="text-neutral-700">·</span>
+        <a href="mailto:igor@sigma.club" className="hover:text-green-500 transition-colors">igor@sigma.club</a>
+        <span className="text-neutral-700">·</span>
+        <a href="https://x.com/trefeelove" target="_blank" rel="noopener noreferrer" className="hover:text-green-500 transition-colors">x.com/trefeelove</a>
+        <span className="text-neutral-700">·</span>
+        <a href="https://sigma.club" target="_blank" rel="noopener noreferrer" className="hover:text-green-500 transition-colors">sigma.club</a>
       </div>
     </motion.header>
   );
