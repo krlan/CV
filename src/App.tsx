@@ -14,7 +14,7 @@ function App() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
-        className="bg-white p-8 lg:p-12 max-w-4xl mx-auto"
+        className="bg-white p-6 lg:p-8 max-w-4xl mx-auto print:p-4"
       >
         <Header />
         <Highlights />

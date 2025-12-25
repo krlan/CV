@@ -13,17 +13,17 @@ const experienceData = [
       "<strong>Email Automation:</strong> Developing intelligent email responders and outreach sequences powered by GPT-4/Claude with CRM integrations (HubSpot, Salesforce).",
       "<strong>AI Translation:</strong> Implementing real-time multilingual translation pipelines for global business communication using Whisper and LLM-based translation.",
       "<strong>Recruiting Automation:</strong> Creating AI-powered hiring tools — resume parsing, candidate scoring, automated outreach, and interview scheduling systems.",
-      "Tech stack: LangChain, OpenAI API, Whisper, ElevenLabs, Vapi, n8n, Make.com, custom RAG pipelines, Twilio, SendGrid."
+      "Tech stack: LangChain, Gemimni/Claude/OpenAI API, Whisper, ElevenLabs, Vapi, n8n, Make.com, custom RAG pipelines, Twilio, SendGrid."
     ]
   },
   {
-    title: "Founder & Product Lead | <a href='https://sigma.club/' target='_blank' rel='noopener noreferrer'>Sigma Club</a> — AI Learning Platform",
+    title: "Founder & Product Lead | <a href='https://sigma.club/' target='_blank' rel='noopener noreferrer'>Sigma Club</a> — Learning Platform",
     period: "2023 - Present | Remote",
     responsibilities: [
       "Building an AI-powered collaborative learning platform designed to foster personalized growth paths within communities.",
-      "Architected 3 core AI features: personalized learning paths (pathGenerator), interest-based matching (mindMatch), and knowledge gap analysis (insightScan).",
-      "Full-stack development: React, TypeScript, Supabase, OpenAI API — rapid iteration and shipping.",
-      "Leveraging AI-assisted development to move fast as a solo founder."
+      "Architected 3 core AI features: personalized learning paths, interest-based matching, and knowledge gap analysis.",
+      "Full-stack development: React, TypeScript, Supabase, Gemimni/Claude API — rapid iteration and shipping.",
+      "Leveraging AI-assisted development to move fast."
     ]
   },
   {

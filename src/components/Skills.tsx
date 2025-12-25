@@ -10,11 +10,11 @@ const skillsData = [
   },
   {
     category: "Proficient:",
-    description: "Python, Solidity, Node.js, Next.js, Supabase, n8n/Make.com, LangChain, OpenAI API, Web3.js/Ethers.js"
+    description: "Python, Solidity, Node.js, Next.js, Supabase, n8n/Make.com, LangChain, OpenAI/Claude/Gemini APIs, Web3.js/Ethers.js"
   },
   {
     category: "AI/ML Stack:",
-    description: "GPT-4, Claude, Whisper, ElevenLabs, OpenRouter, Custom RAG Pipelines, Agentic Workflows, Prompt Engineering"
+    description: "OpenAI, Claude, Gemini APIs, Whisper, ElevenLabs, OpenRouter, Custom RAG Pipelines, Agentic Engineering, Prompt Engineering"
   },
   {
     category: "Blockchain:",

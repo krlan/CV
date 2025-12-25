@@ -12,7 +12,7 @@ const Education: React.FC = () => {
         transition={{ duration: 0.5, delay: 0.2 }}
       >
         <h3 className="text-lg font-semibold text-gray-800">Bachelor of Science in Economics</h3>
-        <p className="text-sm text-gray-600">Higher School of Economics | Russia, Saint-Petersburg</p>
+        <p className="text-sm text-gray-600">Higher School of Economics (Russia's Top5) | Russia, Saint-Petersburg</p>
         <p className="text-sm text-gray-600">Graduated: 2016</p>
       </motion.div>
     </Section>
