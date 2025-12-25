@@ -6,7 +6,7 @@ const Summary: React.FC = () => {
   return (
     <Section title="Summary">
       <motion.p 
-        className="text-gray-700 leading-snug text-sm"
+        className="text-zinc-400 leading-relaxed text-sm pl-3 border-l-2 border-[#262626]"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.2 }}

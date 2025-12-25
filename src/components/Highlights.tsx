@@ -1,12 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Rocket, DollarSign, Code, Globe } from 'lucide-react';
 
 const highlights = [
-  { icon: Rocket, text: "Building AI agents: voice, email, translation & recruiting automation" },
-  { icon: DollarSign, text: "Generated $50k+ in first week launching NFT collection" },
-  { icon: Code, text: "Shipped 5+ products from concept to production" },
-  { icon: Globe, text: "8+ years remote work across US, EU, APAC timezones" }
+  { label: "ai automation", text: "Building AI agents: voice, email, translation & recruiting" },
+  { label: "revenue", text: "Generated $50k+ in first week launching NFT collection" },
+  { label: "shipped", text: "5+ products from concept to production" },
+  { label: "experience", text: "8+ years remote work across US, EU, APAC" }
 ];
 
 const Highlights: React.FC = () => {
@@ -15,7 +14,7 @@ const Highlights: React.FC = () => {
       initial={{ y: 20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, delay: 0.1 }}
-      className="mb-3"
+      className="mb-5"
     >
       <div className="grid grid-cols-2 gap-2">
         {highlights.map((item, index) => (
@@ -24,10 +23,11 @@ const Highlights: React.FC = () => {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.4, delay: 0.15 * index }}
-            className="flex items-center gap-2 bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-100 rounded-md px-2 py-1.5"
+            className="relative bg-[#111111] border border-[#262626] rounded-md px-3 py-2.5 overflow-hidden"
           >
-            <item.icon size={14} className="text-blue-600 flex-shrink-0" />
-            <span className="text-xs font-medium text-gray-700">{item.text}</span>
+            <div className="absolute top-0 left-0 w-[3px] h-full bg-gradient-to-b from-cyan-400 to-purple-500"></div>
+            <div className="font-mono text-[10px] text-cyan-400 uppercase tracking-wide mb-0.5">{item.label}</div>
+            <span className="text-xs text-zinc-100">{item.text}</span>
           </motion.div>
         ))}
       </div>
