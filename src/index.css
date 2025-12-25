@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: #1f2937; /* gray-800 */
+}
+
+/* Define print styles to optimize for PDF output */
+@media print {
+  body {
+    -webkit-print-color-adjust: exact; /* Ensure colors print correctly */
+    print-color-adjust: exact;
+    font-size: 10pt; /* Adjust font size for print */
+  }
+  /* Hide elements not needed for print */
+  .no-print {
+    display: none;
+  }
+  /* Ensure sections don't break across pages unnecessarily */
+  section {
+    page-break-inside: avoid;
+  }
+  h2 {
+    page-break-after: avoid;
+  }
+  ul {
+    page-break-inside: avoid;
+  }
+}
+
+@layer components {
+  .section-title {
+    @apply text-xl font-semibold border-b border-gray-200 pb-2 mb-4 mt-6 text-gray-900;
+  }
+  
+  .experience-entry {
+    @apply mb-6;
+  }
+  
+  .experience-entry h3 {
+    @apply text-lg font-semibold text-gray-800;
+  }
+  
+  .experience-entry .details {
+    @apply text-sm text-gray-600 mb-2;
+  }
+  
+  .experience-entry ul {
+    @apply list-disc ml-6 text-gray-700 space-y-1;
+  }
+  
+  .skills-category {
+    @apply mb-4;
+  }
+  
+  .skills-category h4 {
+    @apply font-semibold text-gray-700 mb-1;
+  }
+  
+  a {
+    @apply text-blue-600 no-underline;
+  }
+  
+  a:hover {
+    @apply underline;
+  }
+}

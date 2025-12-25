@@ -1,0 +1,20 @@
+import React from 'react';
+import { motion } from 'framer-motion';
+import Section from './Section';
+
+const Summary: React.FC = () => {
+  return (
+    <Section title="Summary">
+      <motion.p 
+        className="text-gray-700 leading-relaxed"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+      >
+        AI & Blockchain entrepreneur who has built and shipped 5+ products, automated 10,000+ customer interactions with AI agents, and generated $50k+ revenue from zero. Self-taught engineer (TypeScript, React, Solidity, Python) with 6+ years in crypto/DeFi and deep expertise in AI automation — voice AI, intelligent email systems, and workflow orchestration. Combines technical execution speed with product vision, consistently delivering from concept to production in weeks, not months.
+      </motion.p>
+    </Section>
+  );
+};
+
+export default Summary;
