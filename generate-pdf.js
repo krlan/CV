@@ -9,7 +9,7 @@ const generatePDF = async () => {
   await page.setViewport({ width: 1200, height: 1600 });
   
   console.log('Loading CV...');
-  await page.goto('https://krlan.github.io/CV/', { 
+  await page.goto('http://localhost:5173/CV/', { 
     waitUntil: 'networkidle0',
     timeout: 30000 
   });
@@ -22,11 +22,12 @@ const generatePDF = async () => {
     path: 'Igor_Trefilov_CV.pdf',
     format: 'A4',
     printBackground: true,
+    scale: 1.0,
     margin: {
-      top: '20px',
-      right: '20px',
-      bottom: '20px',
-      left: '20px'
+      top: '0px',
+      right: '0px',
+      bottom: '0px',
+      left: '0px'
     }
   });
   
